@@ -21,4 +21,4 @@ This module creates the following resources.
 ### Inputs
 
 * vpc_cidr - (Required). User must supply the CIDR for VPC.
-* project_name - (Required). User must supply the project nae.
+* project_name - (Required). User must supply the project name.
