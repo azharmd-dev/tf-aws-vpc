@@ -8,7 +8,7 @@ resource "aws_vpc" "main" {
     var.vpc_tags,
     local.common_tags,
     {
-        Name = local.common_name_sufix
+        Name = local.common_name_suffix
     }
   )
 }
@@ -21,7 +21,7 @@ resource "aws_internet_gateway" "gateway" {
     var.igw_tags,
     local.common_tags,
     {
-        Name = local.common_name_sufix
+        Name = local.common_name_suffix
     }
   )
 }
@@ -39,7 +39,7 @@ resource "aws_subnet" "public" {
     var.public_subnet_tags,
     local.common_tags,
     {
-        Name = "${local.common_name_sufix}-public-${local.az_names[count.index]}"
+        Name = "${local.common_name_suffix}-public-${local.az_names[count.index]}"
     }
   )
 }
@@ -55,7 +55,7 @@ resource "aws_subnet" "private" {
     var.private_subnet_tags,
     local.common_tags,
     {
-        Name = "${local.common_name_sufix}-private-${local.az_names[count.index]}"
+        Name = "${local.common_name_suffix}-private-${local.az_names[count.index]}"
     }
   )
 }
@@ -71,7 +71,7 @@ resource "aws_subnet" "database" {
     var.database_subnet_tags,
     local.common_tags,
     {
-        Name = "${local.common_name_sufix}-database-${local.az_names[count.index]}"
+        Name = "${local.common_name_suffix}-database-${local.az_names[count.index]}"
     }
   )
 }
@@ -84,7 +84,7 @@ resource "aws_route_table" "public" {
     var.public_route_table_tags,
     local.common_tags,
     {
-        Name = "${local.common_name_sufix}-public"
+        Name = "${local.common_name_suffix}-public"
     }
   )
 }
@@ -97,7 +97,7 @@ resource "aws_route_table" "private" {
     var.private_route_table_tags,
     local.common_tags,
     {
-        Name = "${local.common_name_sufix}-private"
+        Name = "${local.common_name_suffix}-private"
     }
   )
 }
@@ -110,7 +110,7 @@ resource "aws_route_table" "database" {
     var.database_route_table_tags,
     local.common_tags,
     {
-        Name = "${local.common_name_sufix}-database"
+        Name = "${local.common_name_suffix}-database"
     }
   )
 }
@@ -130,7 +130,7 @@ resource "aws_eip" "nat" {
     var.eip_tags,
     local.common_tags,
     {
-        Name = "${local.common_name_sufix}-nat"
+        Name = "${local.common_name_suffix}-nat"
     }
   )
 }
@@ -144,7 +144,7 @@ resource "aws_nat_gateway" "nat" {
     var.nat_gw_tags,
     local.common_tags,
     {
-        Name = "${local.common_name_sufix}"
+        Name = "${local.common_name_suffix}"
     }
   )
 
