@@ -14,11 +14,6 @@ data "aws_route_table" "main" {
   }
 }
 
-data "aws_route_table" "private" {
-  vpc_id = aws_vpc.main.id
-
-  filter {
-    name   = "tag:Name"
-    values = ["robomart-dev-private"]
-  }
+data "aws_vpc" "default" {
+  default = true
 }
