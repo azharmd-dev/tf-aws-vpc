@@ -13,7 +13,3 @@ data "aws_route_table" "main" {
     values = ["true"]
   }
 }
-
-data "aws_vpc" "default" {
-  default = true
-}
