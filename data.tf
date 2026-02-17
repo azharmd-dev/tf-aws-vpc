@@ -13,3 +13,12 @@ data "aws_route_table" "main" {
     values = ["true"]
   }
 }
+
+data "aws_route_table" "private" {
+  vpc_id = aws_vpc.main.id
+
+  filter {
+    name   = "tag:Name"
+    values = ["robomart-dev-private"]
+  }
+}
